@@ -1,0 +1,7 @@
+C:\Users\USUARIO\Documents\Visual Studio 2012\Projects\CSharp\VarintKata\VarintKataTests\bin\Debug\VarintKataTests.dll
+C:\Users\USUARIO\Documents\Visual Studio 2012\Projects\CSharp\VarintKata\VarintKataTests\bin\Debug\VarintKataTests.pdb
+C:\Users\USUARIO\Documents\Visual Studio 2012\Projects\CSharp\VarintKata\VarintKataTests\bin\Debug\VarintKata.exe
+C:\Users\USUARIO\Documents\Visual Studio 2012\Projects\CSharp\VarintKata\VarintKataTests\bin\Debug\VarintKata.pdb
+C:\Users\USUARIO\Documents\Visual Studio 2012\Projects\CSharp\VarintKata\VarintKataTests\obj\Debug\VarintKataUnitTests.csprojResolveAssemblyReference.cache
+C:\Users\USUARIO\Documents\Visual Studio 2012\Projects\CSharp\VarintKata\VarintKataTests\obj\Debug\VarintKataTests.dll
+C:\Users\USUARIO\Documents\Visual Studio 2012\Projects\CSharp\VarintKata\VarintKataTests\obj\Debug\VarintKataTests.pdb
