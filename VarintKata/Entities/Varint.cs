@@ -11,18 +11,38 @@ namespace VarintKata.Entities
         public string ConvertIntToVarint(int number)
         {
             string varint = "";
-            string lessSignificantBits = "";
-            string moreSignificantBits = "";
+            List<string> bytes = new List<string>();
 
             string binaryRepresentation = ConvertIntToBinary(number);
             int binaryRepresentationLength = binaryRepresentation.Length;
 
             if (binaryRepresentationLength > 8)
             {
-                lessSignificantBits = binaryRepresentation.Substring(binaryRepresentationLength - 7, 7);
-                moreSignificantBits = binaryRepresentation.Substring(0, binaryRepresentationLength - 7);
+                for (int i = 0; i <= binaryRepresentationLength / 8; i++)
+                {
+                    if (IsLastByte(binaryRepresentationLength, i))
+                    {
+                        bytes.Add(binaryRepresentation.Substring(0, binaryRepresentationLength - 7 * i));                       
+                    } 
+                    else
+                    {
+                        bytes.Add(binaryRepresentation.Substring(binaryRepresentationLength - 7 * (i + 1), 7));
+                    }                    
+                }
 
-                varint = "1" + lessSignificantBits + " 0" + moreSignificantBits.PadLeft(7, '0');
+                for (int i = 0; i < bytes.Count; i++)
+                {
+                    if (i == bytes.Count - 1)
+                    {
+                        varint = varint + " 0" + bytes[i].PadLeft(7, '0');
+                    }
+                    else
+                    {
+                        varint = varint + " 1" + bytes[i];
+                    }                    
+                }
+
+                varint = varint.Trim();
             }
             else
             {
@@ -30,6 +50,11 @@ namespace VarintKata.Entities
             }
 
             return varint;
+        }
+
+        private bool IsLastByte(int binaryRepresentationLength, int i)
+        {
+            return i == binaryRepresentationLength / 8;
         }
 
         private string ConvertIntToBinary(int number)

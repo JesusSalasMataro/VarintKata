@@ -62,5 +62,19 @@ namespace VarintKataTests
             // ASSERT
             Assert.AreEqual(binaryRepresentationExpected, binaryRepresentationActual);
         }
+
+        [TestMethod]
+        public void Given_MoreThanTwoBytesInt_When_ConvertNumber784000ToVarint_Then_ReturnCorrectResult()
+        {
+            // ARRANGE
+            Varint varint = new Varint();
+
+            // ACT
+            string binaryRepresentationActual = varint.ConvertIntToVarint(784000);
+            string binaryRepresentationExpected = "10000000 11101101 00101111";
+
+            // ASSERT
+            Assert.AreEqual(binaryRepresentationExpected, binaryRepresentationActual);
+        }
     }
 }
