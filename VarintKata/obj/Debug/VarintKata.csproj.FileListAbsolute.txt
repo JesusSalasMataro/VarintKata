@@ -1,0 +1,2 @@
+C:\Users\USUARIO\AppData\Local\Temporary Projects\VarintKata\bin\Debug\VarintKata.exe.config
+C:\Users\USUARIO\Documents\Visual Studio 2012\Projects\CSharp\VarintKata\VarintKata\bin\Debug\VarintKata.exe.config
