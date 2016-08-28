@@ -10,7 +10,12 @@ namespace VarintKata.Entities
     {
         public string ConvertVarToInt(int number)
         {
-            return "00000001";
+            return ConvertIntToBinary(number);
+        }
+
+        private string ConvertIntToBinary(int number)
+        {
+            return Convert.ToString(number, 2);
         }
     }
 }
