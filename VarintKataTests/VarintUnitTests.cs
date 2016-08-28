@@ -14,7 +14,7 @@ namespace VarintKataTests
             Varint varint = new Varint();
 
             // ACT
-            string binaryRepresentationActual = varint.ConvertVarToInt(1);
+            string binaryRepresentationActual = varint.ConvertIntToVarint(1);
             string binaryRepresentationExpected = "1";
 
             // ASSERT
@@ -28,8 +28,36 @@ namespace VarintKataTests
             Varint varint = new Varint();
 
             // ACT
-            string binaryRepresentationActual = varint.ConvertVarToInt(20);
+            string binaryRepresentationActual = varint.ConvertIntToVarint(20);
             string binaryRepresentationExpected = "10100";
+
+            // ASSERT
+            Assert.AreEqual(binaryRepresentationExpected, binaryRepresentationActual);
+        }
+
+        [TestMethod]
+        public void Given_TwoBytesInt_When_ConvertNumber300ToVarint_Then_ReturnCorrectResult()
+        {
+            // ARRANGE
+            Varint varint = new Varint();
+
+            // ACT
+            string binaryRepresentationActual = varint.ConvertIntToVarint(300);
+            string binaryRepresentationExpected = "10101100 00000010";
+
+            // ASSERT
+            Assert.AreEqual(binaryRepresentationExpected, binaryRepresentationActual);
+        }
+
+        [TestMethod]
+        public void Given_TwoBytesInt_When_ConvertNumber524ToVarint_Then_ReturnCorrectResult()
+        {
+            // ARRANGE
+            Varint varint = new Varint();
+
+            // ACT
+            string binaryRepresentationActual = varint.ConvertIntToVarint(524);
+            string binaryRepresentationExpected = "10001100 00000100";
 
             // ASSERT
             Assert.AreEqual(binaryRepresentationExpected, binaryRepresentationActual);
